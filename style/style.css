@@ -1,0 +1,382 @@
+html {
+    min-height:100%;
+    position:relative;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height:100%;
+    margin: 0;
+    padding: 0;
+    /*background*/
+    background-image: url("../images/backgroundw.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #262321;
+    /*text*/
+    color: #f2f2e4;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    /*flex*/
+    display: flex;
+    flex-direction: column;
+}
+
+/* For mobile devices */
+/*@media only screen and (max-width: 767px) {
+    body {
+        background-image: url("images/backgroundw.png");
+        background-position: left center;
+    }
+
+}*/
+
+/* menu */
+nav {
+    height: 80px;
+}
+
+#menuToggle {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 1.5em;
+    left: 1.5em;
+    z-index: 1;
+    user-select: none;
+}
+
+#menuToggle input {
+    display: flex;
+    width: 2em;
+    height: 5em;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+    transform: translate(0, -2em);
+    position: fixed;
+}
+
+#menuToggle span {
+    display: flex;
+    width: 2.25em;
+    height: 0.2em;
+    margin-bottom: 5px;
+    position: relative;
+    background: #f2f2e4;
+    border-radius: 5px;
+    z-index: 1;
+    transform-origin: 0.48em 0;
+    transition: transform 0.5s,
+    background 0.5s,
+    opacity 0.55s ease;
+}
+
+#menuToggle span:nth-last-child(2) {
+    transform-origin: 0 100%;
+}
+
+#menuToggle input:checked + span {
+    transform: rotate(45deg) translate(-3px, -1px);
+    background: #30183c;
+}
+
+#menuToggle input:checked + span {
+    position: fixed;
+    transform: rotate(45deg) translate(-3px, -1px);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3) {
+    opacity: 0;
+    transform: scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(-11px, 10px);
+    background: #30183c;
+    position: fixed;
+}
+
+#menu {
+    font-size: 1em;
+    font-weight: 600;
+    position: fixed;
+    width: 10em;
+    height: 90vh;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    box-shadow: 0 0 2em #615b56;
+    margin: -4em  10em 10em -1em;
+    padding: 10em 3em 3em;
+    background-color: #f2f2ed;
+    transform: translate(-125%, 0);
+    transition: transform 0.5s;
+}
+
+#menu input:checked {
+    transition: transform 2s;
+}
+
+#menu li {
+    padding: 0.7em 0;
+}
+
+#menuToggle input:checked ~ ul {
+    transform: none;
+}
+
+#menu a {
+    text-transform: uppercase;
+}
+
+#menu a:link {
+    color: #30183c;
+    text-decoration: none;
+}
+
+#menu a:visited {
+    color: #30183c;
+    text-decoration: none;
+}
+
+#menu a:hover {
+    color: #cbc2cd;
+}
+
+#menu a.active, #menu a:active {
+    color: #6146c2;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    font-size: 0.75em;
+    align-self: center;
+    display: flex;
+    align-content: flex-end;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-bottom: 0.5em;
+}
+
+.profile * {
+    display: block;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.profile img {
+    border-radius: 50%;
+    max-width: 29vh;
+    border: 7px solid #f2f2e4;
+}
+
+.profile h1 {
+    font-weight: 400;
+    font-size: 1.5em;
+}
+
+.profile h2 {
+    font-size: 1em;
+    font-weight: 200;
+    margin-top: -0.6em;
+}
+
+.contact-info {
+    padding-top: 20vh;
+    margin-bottom: -2.5vh;
+    margin-left: -3.5vh;
+    bottom: 0;
+    left: 0;
+}
+
+.contact-info img {
+    max-height: 20vh;
+    float: left;
+    margin-right: -10vh;
+    margin-left: auto;
+    transform: translate(-5%, -20%);
+}
+
+.contact-info address, .contact-info h1 {
+    font-size: 0.7em;
+    font-style: normal;
+    float: left;
+}
+
+.contact-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-text h1 {
+    align-self: flex-start;
+}
+
+.contact-text address {
+    align-self: flex-start;
+}
+
+main > h1 {
+    text-transform: uppercase;
+    text-align: right;
+    padding-right: 0.5em;
+    font-weight: 400;
+}
+
+#projects, #interests {
+    margin-top: -1.8em;
+    padding: 1em 1em 1em 1em;
+    background-color: #262321;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-around;
+    color: #262321;
+    margin-bottom: 0.5em;
+}
+
+#projects > * {
+    flex: 1 1 20em;
+    flex-grow: 0;
+}
+.card {
+    flex-basis: 20em;
+    margin: 2em;
+    background-color: #f2f2f2;
+    box-shadow: 0 1em 3em #000000;
+    padding-bottom: 1em;
+}
+
+.card h2, .card h3 {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.card h3 {
+    font-weight: 200;
+    text-align: left;
+    margin-right: 2.5em;
+    font-size: 1em;
+}
+
+.card h2 {
+    color: #7e48bd;
+    font-size: 1em;
+}
+
+.card img {
+    width: 98.5%;
+    border: 0.1em solid #f2f2e4;
+
+}
+
+.more img{
+    height: 3em;
+    width: auto;
+    float: right;
+    margin-right: -1em;
+    margin-top: -0.2em;
+    border: none;
+    transition: transform .5s;
+}
+
+.more img:hover, .back img:hover {
+    transform: scale(1.2);
+}
+
+#description {
+    /* zmienic na komputer*/
+    background-color: #262321;
+    color: #f2f2e4;
+    margin-top: 2em;
+    padding: 1em 2em 2em;
+    text-align: justify;
+}
+
+pre {
+    overflow: auto;
+    /*background-color: #515151;*/
+    border: 0.09em solid #f2f2e4;
+    padding: 1em 1em 1em 1em;
+    margin: auto;
+    /*zmienic na desktop*/
+}
+
+code {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 300;
+    font-size: 0.8em;
+}
+
+.back img {
+    height: 4em;
+    width: auto;
+    float: right;
+    border: none;
+    transition: transform .5s;
+    margin-bottom: -2em;
+    margin-right: -1.5em;
+}
+
+article > h1 {
+    text-align: center;
+}
+
+.interest {
+    color: #f2f2ed;
+    flex-basis: 40em;
+    padding: 0.5em;
+    align-items: center;
+}
+
+#interests > * {
+    flex: 1 1 20em;
+    flex-grow: 1;
+    margin: 0.5em;
+}
+
+#int {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+.interest h2 {
+    font-weight: 200;
+    font-size: 1.25em;
+    /*rozmiar czcionki desktop*/
+}
+
+#interests .interest:nth-child(1),
+#interests .interest:nth-child(4),
+#interests .interest:nth-child(7) {
+    background-color: #7348c3;
+}
+
+#interests .interest:nth-child(2),
+#interests .interest:nth-child(5) {
+    background-color: #7b48c3;
+}
+
+#interests .interest:nth-child(3),
+#interests .interest:nth-child(6){
+    background-color: #6746c2;
+}
+
+.interest details {
+    padding-bottom: 0.5em;
+}
+
+
