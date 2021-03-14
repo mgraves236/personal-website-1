@@ -95,7 +95,7 @@ nav {
 }
 
 #menuToggle input:checked ~ span:nth-last-child(2) {
-    transform: rotate(-45deg) translate(-11px, 10px);
+    transform: rotate(-45deg) translate(-12px, 10px);
     background: #30183c;
     position: fixed;
 }
