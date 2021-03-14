@@ -226,6 +226,7 @@ footer {
 
 .contact-text address {
     align-self: flex-start;
+    font-size: 1em;
 }
 
 main > h1 {
