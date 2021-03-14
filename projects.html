@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8"/>
+    <title>Lista 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap"
+          rel="stylesheet">
+    <link href="style/normalize.css" rel="stylesheet" type="text/css"/>
+    <link href="style/style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<header>
+    <nav>
+        <div id="menuToggle">
+            <input type="checkbox"/>
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
+                <li><a href="index.html">Strona główna</a></li>
+                <li><a href="projects.html" class="active">Projekty</a></li>
+                <li><a href="interests.html">Zainteresowania</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<main>
+    <h1>Projekty</h1>
+    <div id = "projects">
+        <article class = "card">
+            <img src = "images/projects/percolation.png" alt = "Perkolacja">
+            <h2>Perkolacja na sieci prostokątnej</h2>
+            <h3>Algorytm Hoshena–Kopelmana.</h3>
+        </article>
+        <article class="card">
+            <img src = "images/projects/pendulum.png" alt = "Wahadło">
+            <h2>Symulacja wahadła</h2>
+            <h3>Symulacja wahadła z oporem oraz siłą wymuszającą - animacja w pythonie.</h3>
+        </article>
+        <article class="card">
+            <img src = "images/projects/ising2.png" alt = "Model Isinga">
+            <div class = "more"><a href="ising.html"><img src = "images/projects/more.svg" alt = "więcej"></a></div>
+            <h2>Model Isinga</h2>
+            <h3>Symulacja Monte Carlo modelu wykorzystywanego w mechanice statystycznej do badania przejść fazowych.</h3>
+        </article>
+        <article class="card">
+            <img src = "images/projects/hetman.png" alt = "Hetman szachownica">
+            <div class = "more"><a href="hetman.html"><img src = "images/projects/more.svg" alt = "więcej"></a></div>
+            <h2>Problem n hetmanów</h2>
+            <h3>Rozwiązanie problemu n hetmanów z wykorzytstaniem przeszukiwania z nawrotami.</h3>
+        </article>
+        <article class="card">
+            <img src = "images/projects/cesar.png" alt = "Szyfr Cezara">
+            <div class = "more"><a href="cesar.html"><img src = "images/projects/more.svg" alt = "więcej"></a></div>
+            <h2>Szyfr Cezara</h2>
+            <h3>Kodowane/dekodowanie pliku tesktowego z wykorzystaniem szyfru Cezara.</h3>
+        </article>
+    </div>
+</main>
+<footer>
+    &copy; Copyright Magdalena Gołębiowska
+</footer>
+</body>
+</html>
+
