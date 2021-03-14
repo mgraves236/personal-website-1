@@ -206,7 +206,7 @@ footer {
     float: left;
     margin-right: -10vh;
     margin-left: auto;
-    transform: translate(-5%, -20%);
+    transform: translate(-5%, -15%);
 }
 
 .contact-info address, .contact-info h1 {
@@ -226,7 +226,7 @@ footer {
 
 .contact-text address {
     align-self: flex-start;
-    font-size: 0.9em;
+    font-size: 0.85em;
 }
 
 main > h1 {
@@ -234,6 +234,7 @@ main > h1 {
     text-align: right;
     padding-right: 0.5em;
     font-weight: 400;
+    margin-bottom: 0.75em;
 }
 
 #projects, #interests {
@@ -253,6 +254,7 @@ main > h1 {
     flex: 1 1 20em;
     flex-grow: 0;
 }
+
 .card {
     flex-basis: 20em;
     margin: 2em;
@@ -353,7 +355,7 @@ article > h1 {
 
 #int {
     font-size: 1.5em;
-    margin-bottom: 1em;
+    margin-bottom: 1.04em;
 }
 
 .interest h2 {
