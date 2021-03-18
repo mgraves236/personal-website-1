@@ -31,50 +31,31 @@
     <div class = "back"><a href="projects.html"><img src = "images/projects/back.svg" alt = "powrót"></a></div>
     <article>
         <h1>Problem n hetmanów</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum imperdiet quam tellus, sit amet luctus purus
-            mollis at. In vehicula ante mauris, a vestibulum felis blandit sit amet. Vestibulum ante ipsum primis in faucibus
-            orci luctus et ultrices posuere cubilia curae; Fusce facilisis scelerisque condimentum. Proin semper venenatis
-            metus, et scelerisque justo egestas non. In suscipit sem neque, vitae mollis tellus pretium quis. In hac
-            habitasse platea dictumst. Vestibulum malesuada sem eu elit condimentum imperdiet. In sagittis turpis sed nisi
-            aliquet pulvinar. Donec metus ex, sollicitudin quis sem et, fringilla vestibulum libero.</p>
-
-        <p>Curabitur volutpat laoreet purus. Donec ultrices vel mauris eget dignissim. Donec pulvinar tristique viverra.
-            In tincidunt, risus at pretium aliquet, quam turpis consectetur massa, eget tincidunt ante nisl eu turpis.
-            Integer ultrices auctor nisl, et malesuada lorem vehicula ac. Nam consectetur suscipit lacus, sed rhoncus dui
-            rhoncus vitae. In et aliquam metus. Fusce pharetra a massa sit amet tristique. Quisque semper mauris quis metus
-            porta faucibus. Duis faucibus augue vitae elementum dapibus. Duis auctor est ante, non consectetur justo
-            interdum ut. Sed lobortis ultrices tempus.</p>
-
-        <p>Duis rutrum, nulla eu blandit hendrerit, lorem mi sodales metus, pellentesque porttitor mauris justo sed massa.
-            Curabitur ac pretium arcu. Nunc vehicula urna quis felis rhoncus elementum. Nam euismod convallis rhoncus.
-            Maecenas gravida, urna dictum mollis tincidunt, mi orci ultricies ligula, quis tincidunt neque nunc et metus.
-            Ut ac ex ac quam cursus suscipit. Quisque at tortor nisi. Pellentesque sagittis, est eget molestie euismod, erat
-            mi egestas ante, vitae posuere eros arcu et arcu. Suspendisse maximus dolor et neque facilisis lobortis. Proin
-            nec fringilla sem. Mauris vitae vulputate turpis, vel convallis tellus.</p>
-
-        <p>Donec lorem turpis, venenatis sed hendrerit sed, vehicula at nibh. Donec nec feugiat sapien. Nunc orci neque,
-            commodo eget magna non, pharetra posuere lacus. Aenean rhoncus quis eros vel pulvinar. Duis feugiat nunc eget
-            volutpat aliquam. Etiam ultricies dictum odio eget mollis. Donec mauris justo, condimentum mollis efficitur vel,
-            aliquet non mi. Quisque porta eros in laoreet malesuada. Nam ullamcorper tincidunt mauris molestie mattis. Mauris
-            eu lacus vel enim luctus euismod non vitae libero. Suspendisse volutpat venenatis augue. Mauris sapien magna,
-            faucibus quis porttitor a, dignissim ut urna. Suspendisse imperdiet nunc metus, ut egestas dolor tempus at.
-            Maecenas porttitor pellentesque hendrerit. Suspendisse potenti.</p>
+        <p>
+            Problem n hetmanów dotyczy znalezienia takich rozmieszczeń n hetmanów na szchownicy
+            o wymiarach n×n, aby żadne dwie figury nie znajdowały się w tym samym wierszu, kolumnie,
+            przekątnej.
+        </p>
+        <p>
+            Poniżej przedstawiono fragmentu kodu, który rozwiązuje problem n hetmanów,
+            korzystając z algorytmu przeszukiwania z nawrotami.
+        </p>
         <pre>
 <!--     --><code>
 <!--         -->void NQueens(int n, int column, int board[]) {
 <!--         -->    int row, i;
 <!--         -->    if (column == n) {
 <!--         -->        printf("{");
-<!--         -->        for (i = 0; i < n; i++) {
+<!--         -->        for (i = 0; i &lt; n; i++) {
 <!--         -->            printf(" %d ", board[i]);
 <!--         -->        }
 <!--         -->        printf("}\n");
 <!--         -->        printf("\n");
 <!--         -->     }
 
-<!--         -->    for (row = 0; row < n; row++) {
+<!--         -->    for (row = 0; row &lt; n; row++) {
 <!--         -->         i = 0;
-<!--         -->         while (i < column) {
+<!--         -->         while (i &lt; column) {
 <!--         -->            if (row==board[i] || abs(board[i]-row)==column-i) break;
 <!--         -->            i++;
 <!--         -->          }

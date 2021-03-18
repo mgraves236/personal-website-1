@@ -145,7 +145,7 @@ nav {
 #menu a.active, #menu a:active {
     color: #6146c2;
 }
-
+/* end menu */
 main {
     display: flex;
     flex-direction: column;
@@ -172,6 +172,57 @@ footer {
 
 p {
     line-height: 1.5em;
+}
+
+pre {
+    overflow: auto;
+    border: 0.09em solid #f2f2e4;
+    padding: 1em 1em 1em 1em;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2em;
+    height: 15em;
+}
+
+code {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 300;
+    font-size: 0.8em;
+}
+
+.back img {
+    height: 4em;
+    width: auto;
+    float: right;
+    border: none;
+    transition: transform .5s;
+    margin-bottom: -2em;
+    margin-right: -1.5em;
+}
+
+article > h1 {
+    text-align: center;
+}
+
+details p {
+    padding-top: 0.5em;
+    margin: 1em;
+}
+
+.interest {
+    color: #f2f2ed;
+    flex-basis: 40em;
+    padding: 0.5em;
+    align-items: center;
+}
+
+.interest h2 {
+    font-weight: 200;
+    font-size: 1.25em;
+}
+
+.interest details {
+    padding-bottom: 0.5em;
 }
 
 .profile * {
@@ -235,23 +286,6 @@ p {
     font-size: 0.85em;
 }
 
-#projects, #interests {
-    margin-top: -1.8em;
-    padding: 1em 1em 1em 1em;
-    background-color: #262321;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-content: space-around;
-    margin-bottom: 0.5em;
-}
-
-#projects > * {
-    flex: 1 1 20em;
-    flex-grow: 0;
-}
-
 .card {
     flex-basis: 20em;
     margin: 2em;
@@ -298,6 +332,23 @@ p {
     transform: scale(1.2);
 }
 
+#projects, #interests {
+    margin-top: -1.8em;
+    padding: 1em 1em 1em 1em;
+    background-color: #262321;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-around;
+    margin-bottom: 0.5em;
+}
+
+#projects > * {
+    flex: 1 1 20em;
+    flex-grow: 0;
+}
+
 #description {
     background-color: #262321;
     color: #f2f2e4;
@@ -305,43 +356,6 @@ p {
     text-align: justify;
     margin-bottom: 0.5em;
     margin-top: 0.5em;
-}
-
-pre {
-    overflow: auto;
-    border: 0.09em solid #f2f2e4;
-    padding: 1em 1em 1em 1em;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 2em;
-    height: 15em;
-}
-
-code {
-    font-family: 'Source Code Pro', monospace;
-    font-weight: 300;
-    font-size: 0.8em;
-}
-
-.back img {
-    height: 4em;
-    width: auto;
-    float: right;
-    border: none;
-    transition: transform .5s;
-    margin-bottom: -2em;
-    margin-right: -1.5em;
-}
-
-article > h1 {
-    text-align: center;
-}
-
-.interest {
-    color: #f2f2ed;
-    flex-basis: 40em;
-    padding: 0.5em;
-    align-items: center;
 }
 
 #interests > * {
@@ -353,16 +367,6 @@ article > h1 {
 #int {
     font-size: 1.5em;
     margin-bottom: 1.05em;
-}
-
-.interest h2 {
-    font-weight: 200;
-    font-size: 1.25em;
-}
-
-details p {
-    padding-top: 0.5em;
-    margin: 1em;
 }
 
 #interests .interest:nth-child(1),
@@ -379,10 +383,6 @@ details p {
 #interests .interest:nth-child(3),
 #interests .interest:nth-child(6){
     background-color: #6746c2;
-}
-
-.interest details {
-    padding-bottom: 0.5em;
 }
 
 @media only screen and (min-width: 1200px) {

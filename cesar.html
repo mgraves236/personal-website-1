@@ -31,34 +31,15 @@
     <div class = "back"><a href="projects.html"><img src = "images/projects/back.svg" alt = "powrót"></a></div>
     <article>
         <h1>Szyfr Cezara</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum imperdiet quam tellus, sit amet luctus purus
-            mollis at. In vehicula ante mauris, a vestibulum felis blandit sit amet. Vestibulum ante ipsum primis in faucibus
-            orci luctus et ultrices posuere cubilia curae; Fusce facilisis scelerisque condimentum. Proin semper venenatis
-            metus, et scelerisque justo egestas non. In suscipit sem neque, vitae mollis tellus pretium quis. In hac
-            habitasse platea dictumst. Vestibulum malesuada sem eu elit condimentum imperdiet. In sagittis turpis sed nisi
-            aliquet pulvinar. Donec metus ex, sollicitudin quis sem et, fringilla vestibulum libero.</p>
-
-        <p>Curabitur volutpat laoreet purus. Donec ultrices vel mauris eget dignissim. Donec pulvinar tristique viverra.
-            In tincidunt, risus at pretium aliquet, quam turpis consectetur massa, eget tincidunt ante nisl eu turpis.
-            Integer ultrices auctor nisl, et malesuada lorem vehicula ac. Nam consectetur suscipit lacus, sed rhoncus dui
-            rhoncus vitae. In et aliquam metus. Fusce pharetra a massa sit amet tristique. Quisque semper mauris quis metus
-            porta faucibus. Duis faucibus augue vitae elementum dapibus. Duis auctor est ante, non consectetur justo
-            interdum ut. Sed lobortis ultrices tempus.</p>
-
-        <p>Duis rutrum, nulla eu blandit hendrerit, lorem mi sodales metus, pellentesque porttitor mauris justo sed massa.
-            Curabitur ac pretium arcu. Nunc vehicula urna quis felis rhoncus elementum. Nam euismod convallis rhoncus.
-            Maecenas gravida, urna dictum mollis tincidunt, mi orci ultricies ligula, quis tincidunt neque nunc et metus.
-            Ut ac ex ac quam cursus suscipit. Quisque at tortor nisi. Pellentesque sagittis, est eget molestie euismod, erat
-            mi egestas ante, vitae posuere eros arcu et arcu. Suspendisse maximus dolor et neque facilisis lobortis. Proin
-            nec fringilla sem. Mauris vitae vulputate turpis, vel convallis tellus.</p>
-
-        <p>Donec lorem turpis, venenatis sed hendrerit sed, vehicula at nibh. Donec nec feugiat sapien. Nunc orci neque,
-            commodo eget magna non, pharetra posuere lacus. Aenean rhoncus quis eros vel pulvinar. Duis feugiat nunc eget
-            volutpat aliquam. Etiam ultricies dictum odio eget mollis. Donec mauris justo, condimentum mollis efficitur vel,
-            aliquet non mi. Quisque porta eros in laoreet malesuada. Nam ullamcorper tincidunt mauris molestie mattis. Mauris
-            eu lacus vel enim luctus euismod non vitae libero. Suspendisse volutpat venenatis augue. Mauris sapien magna,
-            faucibus quis porttitor a, dignissim ut urna. Suspendisse imperdiet nunc metus, ut egestas dolor tempus at.
-            Maecenas porttitor pellentesque hendrerit. Suspendisse potenti.</p>
+        <p>
+            Szyfr Cezara to rodzaj szyfru podstawieniowego, w którym każda litera tekstu jawnego
+            (niezaszyfrowanego) zastępowana jest inną literą (szyfr monoalfabetyczny) wyznaczoną
+            poprzez stałe przesunięcie przy czym kierunek przesunięcia jest zachowany.
+        </p>
+        <p>
+            Poniżej przedstawiono funkcję odpowiadającą za roszyfrowywanie pliku z tekstem w języku
+            angielskim, znajdując przesunięcie.
+        </p>
         <pre>
 <!--     --><code>
 <!--          -->void decryption(char message[], int n, int shift, char *filename) {
@@ -70,17 +51,17 @@
 <!--          -->   fptr = fopen(filename,"w");
 
 <!--          -->   //dekodowanie
-<!--          -->   for (i = 0; i < n; i++) {
-<!--          -->      if (message[i] > ='a' && message[i] <= 'z') {
+<!--          -->   for (i = 0; i &lt; n; i++) {
+<!--          -->      if (message[i] > ='a' && message[i] &lt;= 'z') {
 <!--          -->           //En(x) = (a - n) % 26 musi wyjsc zakres 0-25
 <!--          -->           a = (message[i]-'a'-shift)%26;
-<!--          -->           if(a < 0) a = a + 26;
+<!--          -->           if(a &lt; 0) a = a + 26;
 <!--          -->           else if(a > 25) a=a-26;
 <!--          -->           de_message[i] = a + 'a';
-<!--          -->       } else if (message[i] >= 'A' && message[i] <= 'Z') {
+<!--          -->       } else if (message[i] >= 'A' && message[i] &lt;= 'Z') {
 <!--          -->           de_message[i] = ((message[i] - 'A' - shift) % 26 + 'A');
 <!--          -->           a = (message[i] - 'A' - shift) % 26;
-<!--          -->           if (a < 0) a = a + 26;
+<!--          -->           if (a &lt; 0) a = a + 26;
 <!--          -->           else if (a > 25) a = a - 26;
 <!--          -->           de_message[i] = a + 'A';
 <!--          -->        } else {
@@ -89,7 +70,7 @@
 <!--          -->        }
 <!--          -->   }
 <!--          -->   i = 0;
-<!--          -->   while (i < n) {
+<!--          -->   while (i &lt; n) {
 <!--          -->       fprintf(fptr,"%c",de_message[i]);
 <!--          -->       i++;
 <!--          -->   }
