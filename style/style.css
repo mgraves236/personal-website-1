@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 html {
     min-height:100%;
     position:relative;
@@ -24,16 +28,6 @@ body {
     display: flex;
     flex-direction: column;
 }
-
-/* For mobile devices */
-/*@media only screen and (max-width: 767px) {
-    body {
-        background-image: url("images/backgroundw.png");
-        background-position: left center;
-    }
-
-}*/
-
 /* menu */
 nav {
     height: 80px;
@@ -104,8 +98,8 @@ nav {
     font-size: 1em;
     font-weight: 600;
     position: fixed;
-    width: 10em;
-    height: 90vh;
+    width: 16em;
+    height: 100em;
     top:0;
     bottom:0;
     left:0;
@@ -157,6 +151,14 @@ main {
     flex-direction: column;
 }
 
+main > h1 {
+    text-transform: uppercase;
+    text-align: right;
+    padding-right: 0.5em;
+    font-weight: 400;
+    margin-bottom: 0.75em;
+}
+
 footer {
     font-size: 0.75em;
     align-self: center;
@@ -166,6 +168,10 @@ footer {
     flex-direction: column;
     justify-content: space-around;
     margin-bottom: 0.5em;
+}
+
+p {
+    line-height: 1.5em;
 }
 
 .profile * {
@@ -229,14 +235,6 @@ footer {
     font-size: 0.85em;
 }
 
-main > h1 {
-    text-transform: uppercase;
-    text-align: right;
-    padding-right: 0.5em;
-    font-weight: 400;
-    margin-bottom: 0.75em;
-}
-
 #projects, #interests {
     margin-top: -1.8em;
     padding: 1em 1em 1em 1em;
@@ -246,7 +244,6 @@ main > h1 {
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-content: space-around;
-    color: #262321;
     margin-bottom: 0.5em;
 }
 
@@ -273,6 +270,7 @@ main > h1 {
     text-align: left;
     margin-right: 2.5em;
     font-size: 1em;
+    color: #262321;
 }
 
 .card h2 {
@@ -301,10 +299,8 @@ main > h1 {
 }
 
 #description {
-    /* zmienic na komputer*/
     background-color: #262321;
     color: #f2f2e4;
-    margin-top: 2em;
     padding: 1em 2em 2em;
     text-align: justify;
     margin-bottom: 0.5em;
@@ -313,11 +309,12 @@ main > h1 {
 
 pre {
     overflow: auto;
-    /*background-color: #515151;*/
     border: 0.09em solid #f2f2e4;
     padding: 1em 1em 1em 1em;
-    margin: auto;
-    /*zmienic na desktop*/
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2em;
+    height: 15em;
 }
 
 code {
@@ -361,7 +358,11 @@ article > h1 {
 .interest h2 {
     font-weight: 200;
     font-size: 1.25em;
-    /*rozmiar czcionki desktop*/
+}
+
+details p {
+    padding-top: 0.5em;
+    margin: 1em;
 }
 
 #interests .interest:nth-child(1),
@@ -384,4 +385,41 @@ article > h1 {
     padding-bottom: 0.5em;
 }
 
+@media only screen and (min-width: 1200px) {
+    main > h1 {
+        text-transform: uppercase;
+        text-align: right;
+        padding-right: 4em;
+        font-weight: 400;
+        margin-bottom: 0.7em;
+        font-size: 2.3em;
+    }
 
+    #int {
+        font-size: 2em;
+        margin-bottom: 0.8em;
+    }
+
+    #projects, #interests {
+        padding-right: 10em;
+        padding-left: 10em;
+    }
+
+    #description {
+        padding-right: 15em;
+        padding-left: 15em;
+    }
+
+    .contact-info {
+        padding-top: 20vh;
+        margin-bottom: -2.5vh;
+        margin-left: 35.0vh;
+        bottom: 0;
+        left: 0;
+    }
+
+    pre {
+        width: 53%;
+    }
+
+}
