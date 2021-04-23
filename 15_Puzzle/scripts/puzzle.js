@@ -173,14 +173,16 @@ function getRedPiece() {
 }
 
 function isNextToRed(piece) {
-    let red = _pieces[getRedPiece()];
-    if ((piece.xPos === piece.width + red.xPos ||
-            piece.xPos === - piece.width + red.xPos)
-        && piece.yPos === red.yPos ||
+    if (piece !== null) {
+        let red = _pieces[getRedPiece()];
+        if ((piece.xPos === piece.width + red.xPos ||
+            piece.xPos === -piece.width + red.xPos)
+            && piece.yPos === red.yPos ||
             (piece.yPos === piece.height + red.yPos ||
-                piece.yPos === - piece.height + red.yPos)
-             && piece.xPos === red.xPos)  {
-        return true;
+                piece.yPos === -piece.height + red.yPos)
+            && piece.xPos === red.xPos) {
+            return true;
+        }
     }
     return false;
 }
@@ -258,6 +260,7 @@ function finish() {
 
 function swapPieces(event) {
     let mouse = setMouse(event);
+    //console.log("X " + mouse.x + " Y " + mouse.y);
     let clkdPiece = getPiece(mouse);
     let clickedPiece = _pieces[clkdPiece];
     if (clickedPiece !== null) {
