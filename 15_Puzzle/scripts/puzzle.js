@@ -87,7 +87,7 @@ function setCanvas() {
 }
 
 function shuffleArray(arr) {
-    for (let i = arr.length - 1; i > 0; i--) {
+    for (let i = arr.length - 1; i >= 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [arr[i], arr[j]] = [arr[j], arr[i]];
     }
@@ -265,7 +265,7 @@ function swapPieces(event) {
     let clickedPiece = _pieces[clkdPiece];
     if (clickedPiece !== null) {
         let redPiece = _pieces[getRedPiece()];
-        if(isNextToRed(clickedPiece)) {
+        if (isNextToRed(clickedPiece)) {
             // swap
             [_pieces[getRedPiece()], _pieces[clkdPiece]] = [_pieces[clkdPiece], _pieces[getRedPiece()]];
             let tempX = redPiece.xPos;
