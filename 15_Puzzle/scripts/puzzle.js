@@ -23,7 +23,7 @@ function init() {
             this.style.border = "solid 3px rgba(0, 0, 0, 0)";
         };
     }
-
+    console.log(_img.src);
     document.getElementById("startBtn").addEventListener("click", startGame);
 }
 
