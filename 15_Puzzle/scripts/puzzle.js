@@ -23,7 +23,7 @@ function init() {
             this.style.border = "solid 3px rgba(0, 0, 0, 0)";
         };
     }
-    console.log(_img.src);
+
     document.getElementById("startBtn").addEventListener("click", startGame);
 }
 
@@ -31,7 +31,7 @@ function startGame() {
     _numberRow = document.getElementById("row").value;
     _numberCol = document.getElementById("col").value;
 
-    if (_img.src === "http://:0/") {
+    if (_img.src === "http://:0/" || _img.src === "https://:0/") {
         alert("Wybierz obrazek.");
     }
     _url = new Image();
