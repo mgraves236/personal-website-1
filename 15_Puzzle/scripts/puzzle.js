@@ -94,8 +94,8 @@ function shuffleArray(arr) {
     //check parity -- needs to be even in order to be solvable
     let counter = 0;
     for (let i = 0; i < arr.length; i++) {
-        for (let j = 0; j < arr.length; j++ ) {
-            if (arr[j].id < arr[i].id) {
+        for (let j = 0; j < i; j++ ) {
+            if (arr[j].id > arr[i].id) {
                 counter += 1;
             }
         }
