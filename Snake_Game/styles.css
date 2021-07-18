@@ -21,3 +21,10 @@ h1 {
 #canvas {
     border: 2px indigo solid;
 }
+
+@media only screen and (max-width: 600px) {
+    #canvas {
+        height: 80vw;
+        width: 80vw;
+    }
+}
