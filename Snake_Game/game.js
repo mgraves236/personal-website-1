@@ -3,6 +3,12 @@ let _ctx;
 let _snake;
 let _food;
 
+let _touchStartX = 0;
+let _touchEndX = 0;
+let _touchStartY = 0;
+let _touchEndY = 0;
+
+
 let _playButton = {
     x: 300,
     y: 360,
@@ -22,7 +28,6 @@ setUp();
 
 function clickBtn(e) {
     let mousePos = getMousePos(e);
-    console.log(mousePos);
     if (isInside(mousePos, _playButton)) {
         startGame();
     }
@@ -81,6 +86,19 @@ function mainGame(currentTime) {
             _snake.direction(1, 0);
         }
     });
+
+    window.addEventListener('touchstart', function (e) {
+        _touchStartX = e.changedTouches[0].screenX;
+        _touchStartY = e.changedTouches[0].screenY;
+    });
+
+    window.addEventListener('touchend', function (e) {
+        _touchEndX = e.changedTouches[0].screenX;
+        _touchEndY = e.changedTouches[0].screenY;
+        handleMove();
+    });
+
+
     if (_snake.endGame()) {
         _ctx.clearRect(0, 0, _canvas.width, _canvas.height);
         drawBoard();
@@ -109,4 +127,29 @@ function isInside(pos, button) {
         && pos.y < button.y + button.height && pos.y > button.y;
 }
 
+function handleMove() {
 
+    if (abs(_touchEndX - _touchStartX) > 100) {
+        if (_touchEndX < _touchStartX) {
+            _snake.direction(-1, 0);
+        } else {
+            _snake.direction(1, 0);
+        }
+    }
+
+    if (abs(_touchEndY - _touchStartY) > 100) {
+        if (_touchEndY < _touchStartY) {
+            _snake.direction(0, -1);
+        } else {
+            _snake.direction(0, 1);
+        }
+    }
+}
+
+function abs(number) {
+    if (number < 0) {
+        return -number;
+    } else {
+        return number;
+    }
+}
