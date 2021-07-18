@@ -129,7 +129,7 @@ function isInside(pos, button) {
 
 function handleMove() {
 
-    if (abs(_touchEndX - _touchStartX) > 100) {
+    if (abs(_touchEndX - _touchStartX) > 50) {
         if (_touchEndX < _touchStartX) {
             _snake.direction(-1, 0);
         } else {
@@ -137,7 +137,7 @@ function handleMove() {
         }
     }
 
-    if (abs(_touchEndY - _touchStartY) > 100) {
+    if (abs(_touchEndY - _touchStartY) > 50) {
         if (_touchEndY < _touchStartY) {
             _snake.direction(0, -1);
         } else {
